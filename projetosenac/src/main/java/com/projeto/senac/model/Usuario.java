@@ -8,6 +8,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
+import javax.persistence.Transient;
 
 @Entity
 @SequenceGenerator(name="seq_usuario", sequenceName = "seq_usuario", allocationSize = 1, initialValue = 1)
@@ -19,10 +20,30 @@ public class Usuario implements Serializable{
 	private String email;
 	private String login;
 	private String senha;
+	@Transient
+	private String senha2;
 	private String token;
+	
+	
+	
+	public String getSenha2() {
+		return senha2;
+		
+	}
+	
+	public void setSenha2(String senha2) {
+		this.senha2 = senha2;
+		
+	}
 	
 	public Long getId() {
 		return id;
+	}
+	public String getToken() {
+		return token;
+	}
+	public void setToken(String token) {
+		this.token = token;
 	}
 	public void setId(Long id) {
 		this.id = id;
@@ -45,14 +66,6 @@ public class Usuario implements Serializable{
 	public void setSenha(String senha) {
 		this.senha = senha;
 	}
-	
-	public String getToken() {
-		return token;
-	}
-	public void setToken(String token) {
-		this.token = token;
-	}
-	
 	@Override
 	public int hashCode() {
 		return Objects.hash(id);
@@ -68,7 +81,6 @@ public class Usuario implements Serializable{
 		Usuario other = (Usuario) obj;
 		return Objects.equals(id, other.id);
 	}
-
 	
 	
 

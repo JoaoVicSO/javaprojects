@@ -8,14 +8,14 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.web.bind.annotation.RestController;
+
 @EntityScan(basePackages = "com.projeto.senac.model")
 @ComponentScan(basePackages = "com.projeto.senac.*")
-@EnableJpaRepositories(basePackages="com.projeto.senac.repository")
+
+@EnableJpaRepositories(basePackages = "com.projeto.senac.repository")
 @EnableTransactionManagement
 @RestController
 @EnableAutoConfiguration
-
-
 @SpringBootApplication
 public class ProjetosenacApplication {
 

@@ -13,12 +13,12 @@ public class ServiceEmail {
 	
 	public void SendEmail(String remetente, String emailPraQuem, String assuntoEmail, String corpoEmail) {
 		
-		SimpleMailMessage objeto = new SimpleMailMessage();
-		objeto.setFrom(remetente);
-		objeto.setTo(emailPraQuem);
-		objeto.setText(corpoEmail);
-		objeto.setSubject(assuntoEmail);
-		javaMailSender.send(objeto);
+		SimpleMailMessage mensagem = new SimpleMailMessage();
+		mensagem.setFrom(remetente);
+		mensagem.setTo(emailPraQuem);
+		mensagem.setText(corpoEmail);
+		mensagem.setSubject(assuntoEmail);
+		javaMailSender.send(mensagem);
 		
 	} // Fim SendEmail
 	
